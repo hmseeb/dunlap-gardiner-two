@@ -807,6 +807,13 @@ p  { line-height: 1.75; }
 }
 .admin-card strong { display: block; color: var(--navy); font-size: .9rem; }
 .admin-card span   { font-size: .8rem; color: var(--text-light); }
+.admin-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  margin-bottom: .75rem;
+  object-fit: cover;
+}
 
 .assistants-list {
   display: flex;
