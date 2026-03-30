@@ -1256,3 +1256,180 @@ p  { line-height: 1.75; }
   opacity: 1;
   transform: translateY(0);
 }
+
+/* =============================================
+   CHATBOT WIDGET
+   ============================================= */
+#dg-chatbot-toggle {
+  position: fixed;
+  bottom: 1.75rem;
+  right: 1.75rem;
+  z-index: 9999;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--navy);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0,0,0,.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+#dg-chatbot-toggle:hover {
+  background: var(--gold-dark);
+  color: var(--white);
+  transform: scale(1.07);
+  box-shadow: 0 6px 28px rgba(0,0,0,.3);
+}
+#dg-chatbot-window {
+  position: fixed;
+  bottom: 5.5rem;
+  right: 1.75rem;
+  z-index: 9998;
+  width: 360px;
+  max-width: calc(100vw - 2rem);
+  height: 480px;
+  max-height: calc(100vh - 8rem);
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--gray-200);
+  transform: scale(.95) translateY(10px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease, transform .25s ease;
+}
+#dg-chatbot-window.open {
+  opacity: 1;
+  pointer-events: all;
+  transform: scale(1) translateY(0);
+}
+.dg-chat-header {
+  background: var(--navy);
+  color: var(--white);
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  flex-shrink: 0;
+}
+.dg-chat-header-icon {
+  font-size: 1.4rem;
+}
+.dg-chat-header-text strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+}
+.dg-chat-header-text small {
+  font-size: .78rem;
+  opacity: .75;
+}
+.dg-chat-close {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,.7);
+  cursor: pointer;
+  font-size: 1.3rem;
+  line-height: 1;
+  padding: 0;
+  transition: color var(--transition);
+}
+.dg-chat-close:hover { color: var(--white); }
+.dg-chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  scroll-behavior: smooth;
+}
+.dg-chat-messages::-webkit-scrollbar { width: 5px; }
+.dg-chat-messages::-webkit-scrollbar-thumb { background: var(--gray-200); border-radius: 3px; }
+.dg-msg {
+  max-width: 88%;
+  padding: .6rem .9rem;
+  border-radius: 16px;
+  font-size: .88rem;
+  line-height: 1.5;
+}
+.dg-msg-bot {
+  background: var(--gray-100);
+  color: var(--text);
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+.dg-msg-user {
+  background: var(--navy);
+  color: var(--white);
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+.dg-chat-suggestions {
+  padding: .5rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  flex-shrink: 0;
+  border-top: 1px solid var(--gray-100);
+}
+.dg-chip {
+  background: var(--off-white);
+  border: 1px solid var(--gray-200);
+  border-radius: 20px;
+  padding: .3rem .75rem;
+  font-size: .78rem;
+  cursor: pointer;
+  color: var(--navy);
+  transition: background var(--transition), color var(--transition);
+  font-family: 'Inter', sans-serif;
+}
+.dg-chip:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--navy);
+}
+.dg-chat-input-row {
+  display: flex;
+  gap: .5rem;
+  padding: .75rem 1rem;
+  border-top: 1px solid var(--gray-200);
+  flex-shrink: 0;
+}
+#dg-chat-input {
+  flex: 1;
+  padding: .55rem .85rem;
+  border: 1px solid var(--gray-200);
+  border-radius: 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: .88rem;
+  outline: none;
+  color: var(--text);
+  transition: border-color var(--transition);
+}
+#dg-chat-input:focus { border-color: var(--gold); }
+#dg-chat-send {
+  background: var(--gold);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--navy);
+  font-size: 1rem;
+  transition: background var(--transition);
+  flex-shrink: 0;
+}
+#dg-chat-send:hover { background: var(--gold-dark); color: var(--white); }
