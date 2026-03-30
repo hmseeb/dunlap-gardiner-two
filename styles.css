@@ -757,11 +757,11 @@ p  { line-height: 1.75; }
   transition: all var(--transition);
 }
 .staff-card:hover { box-shadow: var(--shadow-md); border-color: var(--gold); }
-.staff-card-header { display: flex; align-items: center; gap: 1.25rem; margin-bottom: 1.25rem; }
+.staff-card-header { display: flex; align-items: flex-start; gap: 1.5rem; margin-bottom: 1.25rem; }
 .staff-avatar {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
+  width: 130px;
+  height: 150px;
+  border-radius: 8px;
   background: linear-gradient(135deg, var(--navy), var(--navy-light));
   color: var(--gold);
   display: flex;
@@ -771,6 +771,7 @@ p  { line-height: 1.75; }
   font-size: 1.5rem;
   font-weight: 700;
   flex-shrink: 0;
+  object-fit: cover;
 }
 .staff-card-name h3 { font-size: 1.2rem; color: var(--navy); margin-bottom: .2rem; }
 .staff-card-name .title {
@@ -808,8 +809,8 @@ p  { line-height: 1.75; }
 .admin-card strong { display: block; color: var(--navy); font-size: .9rem; }
 .admin-card span   { font-size: .8rem; color: var(--text-light); }
 .admin-avatar {
-  width: 56px;
-  height: 56px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   margin-bottom: .75rem;
   object-fit: cover;
