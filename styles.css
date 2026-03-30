@@ -759,8 +759,8 @@ p  { line-height: 1.75; }
 .staff-card:hover { box-shadow: var(--shadow-md); border-color: var(--gold); }
 .staff-card-header { display: flex; align-items: flex-start; gap: 1.5rem; margin-bottom: 1.25rem; }
 .staff-avatar {
-  width: 130px;
-  height: 150px;
+  width: 200px;
+  height: 260px;
   border-radius: 8px;
   background: linear-gradient(135deg, var(--navy), var(--navy-light));
   color: var(--gold);
@@ -804,30 +804,51 @@ p  { line-height: 1.75; }
   background: var(--off-white);
   border: 1px solid var(--gray-200);
   border-radius: var(--radius);
-  padding: 1rem 1.25rem;
+  padding: 0;
+  overflow: hidden;
+  text-align: center;
+}
+.admin-card-info {
+  padding: .75rem 1rem;
 }
 .admin-card strong { display: block; color: var(--navy); font-size: .9rem; }
 .admin-card span   { font-size: .8rem; color: var(--text-light); }
 .admin-avatar {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  margin-bottom: .75rem;
+  width: 100%;
+  height: 220px;
   object-fit: cover;
+  object-position: top center;
+  display: block;
 }
 
-.assistants-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .6rem;
+.assistants-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2.5rem;
 }
-.assistants-list span {
+.assistant-card {
   background: var(--white);
   border: 1px solid var(--gray-200);
-  border-radius: 100px;
-  padding: .35rem .9rem;
-  font-size: .85rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+  text-align: center;
+}
+.assistant-card-info {
+  padding: .5rem .75rem;
+}
+.assistant-card strong {
+  display: block;
   color: var(--navy);
+  font-size: .82rem;
+  font-weight: 600;
+}
+.assistant-avatar {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
 }
 
 /* =============================================
